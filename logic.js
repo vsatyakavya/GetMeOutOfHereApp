@@ -5,6 +5,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z
     style: 'mapbox://styles/mapbox/streets-v11'
   });
 
-
-
-
+  $(document).ready(function(){
+$('.dropdown-trigger').dropdown();
+  });
