@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+=======
+/* .form{
+    border: teal solid 2px;
+    padding:20px;
+} */
+
+.labelFont{
+    font-size:20px;
+    color:teal;
+}
+.nav-wrapper{
+    background-color:#f58326;
+}
+>>>>>>> 8bb8fe5... add carousel
