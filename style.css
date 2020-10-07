@@ -1,0 +1,5 @@
+.checkbox-light-green[type="checkbox"].filled-in:checked + span:not(.lever):after 
+{
+    border: 2px solid#558b2f ;  
+    background-color:#558b2f ;
+}

@@ -4,6 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZWxpemFqYW5lMTMxMiIsImEiOiJja2Z3eDI2MDcxbnk3M
     style: 'mapbox://styles/mapbox/outdoors-v11',
     zoom: 4
   });
+  console.log(map)
   map.addControl(
     new mapboxgl.GeolocateControl({
     positionOptions: {
