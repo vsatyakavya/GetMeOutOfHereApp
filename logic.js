@@ -12,8 +12,7 @@ $(document).ready(function(){
 //     container: 'map',
 //     style: 'mapbox://styles/mapbox/streets-v11'
 //   });
-var lat;
-var long;
+
   if (navigator.geolocation)
   {
       navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
