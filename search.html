@@ -7,6 +7,8 @@
       <!-- Compiled and minified CSS -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+      <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet'/>
 
       <!-- Compiled and minified JavaScript -->
      <link rel="stylesheet" href="style.css">
@@ -41,9 +43,9 @@
             <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>choose here</a>
              <ul id='dropdown1' class='dropdown-content'>
                 <li id="park"><a href="map.html" id="park">Park</a></li>
-                <li id="hiking"><a href="#!">Hiking</a></li>
-                <li id="museum"><a href="#!">Museum</a></li>
-                <li id="trail"><a href="#!">Trail</a></li>
+                <li id="hiking"><a href="map.html">Hiking</a></li>
+                <li id="museum"><a href="map.html">Museum</a></li>
+                <li id="trail"><a href="map.html">Trail</a></li>
 
                 <!-- <li><a href="#!"><i class="material-icons">ac_unit</i>trail</a></li> -->
                 <!-- <li class="divider" tabindex="-1"></li> -->
@@ -56,6 +58,8 @@
 
     </div>
 </div>
+<div id='map' style='width: auto; height: 300px;'></div>
+
     
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
