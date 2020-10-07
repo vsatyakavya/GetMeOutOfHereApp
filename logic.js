@@ -22,6 +22,10 @@ $.ajax({
 }).then(function(response){
     console.log(response);
 })
-// Want map to grab a list of 10 features from the user's location parameters (userdropdown menu mileage)
+
+$("submit").on("click", function() {
+  // Insert code that takes user to results page when they click the submit button
+})
+// Want map to grab a list of 5 features from the user's location parameters (userdropdown menu mileage)
 // When one of those features is clicked, new page opens with that feature's info
 // Maybe also include a dropdown menu so they can choose how many features they want to see (10, 50, etc.) ?
