@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 /* .form{
     border: teal solid 2px;
     padding:20px;
 } */
 
-=======
->>>>>>> 40f6432... remove unwanted code
 .labelFont{
     font-size:20px;
     color:teal;
@@ -15,4 +10,3 @@
 .nav-wrapper{
     background-color:#f58326;
 }
->>>>>>> 8bb8fe5... add carousel
