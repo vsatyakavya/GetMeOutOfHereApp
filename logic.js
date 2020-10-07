@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z2Q2MnUifQ.EOjRwzS_WYEK5wOfXc32sQ';
   var map = new mapboxgl.Map({
@@ -5,6 +6,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z
     style: 'mapbox://styles/mapbox/streets-v11'
   });
 
+=======
+>>>>>>> 40f6432... remove unwanted code
   $(document).ready(function(){
 $('.dropdown-trigger').dropdown();
   });
