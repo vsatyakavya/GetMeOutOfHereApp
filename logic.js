@@ -57,37 +57,6 @@ $(document).ready(function () {
        zoom: 9
      });
 
-    //  mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z2Q2MnUifQ.EOjRwzS_WYEK5wOfXc32sQ';
-    //  var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
-    //  mapboxClient.geocoding
-    //    .forwardGeocode({
-    //      query: 'Wellington, New Zealand',
-    //      autocomplete: false,
-    //      limit: 1
-    //    })
-    //    .send()
-    //    .then(function (response) {
-    //      if (
-    //        response &&
-    //        response.body &&
-    //        response.body.features &&
-    //        response.body.features.length
-    //      ) {
-    //        var feature = response.body.features[0];
-
-    //        var map = new mapboxgl.Map({
-    //          container: 'map',
-    //          style: 'mapbox://styles/mapbox/outdoors-v11',
-    //          center: feature.center,
-    //          zoom: 10
-    //        });
-    //        new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
-    //      }
-    //    });
-
-
-
-
      var queryURL = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + place + ".json?proximity=" + long + "," + lat + "&autocomplete=false&access_token=pk.eyJ1Ijoic2F0eWFrYXZ5YSIsImEiOiJja2Z3dzlqMHQxbms4MnFtdHU2anRzdXJ1In0.6_LfOlTLPu9B8frAVcNLqA"
 
      $.ajax({
@@ -131,12 +100,13 @@ $(document).ready(function () {
          }).then(function(response){
 
            $("#selected-details").empty();
+           var name= response.name;
            var humidity= response.main.humidity;
-           var temperature =response.main.temp;
-           var description =response.weather[0].main;
-           var date= response.dt;
+           var temperature=response.main.temp;
+           var description=response.weather[0].main;
+           var date=response.dt;
            var formattedDate=  Unix_timestamp(date);
-           var icon = response.weather[0].icon;
+           var icon =response.weather[0].icon;
            var marker = new mapboxgl.Marker()
            .setLngLat([weatherLong, weatherLat])
            .addTo(map);
@@ -150,6 +120,8 @@ $(document).ready(function () {
            var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
            card.append(cardBody);
+           var location = $("<p>");
+           location.text("Location: " + name + "," + placeName)
            var dat = $("<p>");
            dat.text("Date: "+ formattedDate);
            var temp = $("<p>");
@@ -157,10 +129,10 @@ $(document).ready(function () {
            var humid = $("<p>");
            humid.text("Humidity: " + humidity);
            var descr = $("<p>");
-           descr.text("Description:" + description);
+           descr.text("Description: " + description);
            var img =$("<img>");
            img.attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-           cardBody.append(dat, temp , humid, descr, img);
+           cardBody.append(name, dat, temp , humid, descr, img);
            $("#selected-details").append(card);
 
 
