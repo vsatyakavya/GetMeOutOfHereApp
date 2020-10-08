@@ -88,7 +88,8 @@ $(document).ready(function () {
             url:queryUrl,
             method:"GET"
           }).then(function(response){
-            console.log(response);
+
+            $("#selected-details").empty();
             var humidity= response.main.humidity;
             var temperature =response.main.temp;
             var date= response.dt;
@@ -107,12 +108,7 @@ $(document).ready(function () {
 
           });
  
-            // event.preventDefault();
-            // var details =$("<p>");
-            // details.text(weatherLong+" "+weatherLat);
-            // $("#poi-section2").append(details);
-            // getWeatherConditions(weatherLat, weatherLong);
- 
+           
           })
 
         
