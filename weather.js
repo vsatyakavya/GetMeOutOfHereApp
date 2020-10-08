@@ -50,10 +50,15 @@ $(document).ready(function () {
        mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z2Q2MnUifQ.EOjRwzS_WYEK5wOfXc32sQ';
        var map = new mapboxgl.Map({
          container: 'map',
-         style: 'mapbox://styles/mapbox/streets-v11',
+         style: 'mapbox://styles/mapbox/outdoors-v11',
          center: [long, lat],
          zoom: 9
-       });s
+       });
+
+         var marker = new mapboxgl.Marker()
+             .setLngLat([long, lat])
+             .addTo(map);
+
  
  
        var queryURL = "https://api.mapbox.com/geocoding/v5/mapbox.places/" + place + ".json?proximity=" + long + "," + lat + "&autocomplete=false&access_token=pk.eyJ1Ijoic2F0eWFrYXZ5YSIsImEiOiJja2Z3dzlqMHQxbms4MnFtdHU2anRzdXJ1In0.6_LfOlTLPu9B8frAVcNLqA"
@@ -99,6 +104,7 @@ $(document).ready(function () {
              $("#selected-details").empty();
              var humidity= response.main.humidity;
              var temperature =response.main.temp;
+             var description =response.weather[0].main;
              var date= response.dt;
              var formattedDate=  Unix_timestamp(date);
  
@@ -115,9 +121,11 @@ $(document).ready(function () {
              temp.text("Temperature: " + temperature);
              var humid = $("<p>");
              humid.text("Humidity: " + humidity);
+             var descr = $("<p>");
+             descr.text("Description:" + description);
              var dat = $("<p>");
              dat.text("Date: "+ formattedDate);
-             cardBody.append(temp , humid, dat);
+             cardBody.append(temp , humid, descr, dat);
              $("#selected-details").append(card);
  
  
