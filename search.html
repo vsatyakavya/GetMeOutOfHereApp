@@ -28,8 +28,25 @@
       </div>
     </div>
   </nav>
-  <div class="container">
     <div class="row">
+      <div class="container">
+        <div class="row">
+            <div class="form">
+                <label class="select-place labelFont">where do you wanna go!</label><br><br>
+                <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>choose here</a>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li id="lake"><a href="map.html">Lake</a></li>
+                    <li id="beach"><a href="map.html">Beach</a></li>
+                    <li id="zoo"><a href="map.html">Zoo</a></li>
+                    <li id="pool"><a href="map.html">Pool</a></li>
+                </ul>
+            </div>
+            <div id='map' style='width: auto; height: 300px;'></div>
+            <div id="poi-section"></div>
+            <div id="selected-details"></div>
+        </div>
+    </div>
+    <div class="container">
       <div class="col s6">
         <div class="card">
           <div class="card-image">
@@ -90,7 +107,6 @@
       <div class="col s6">
         <div id='map' style='width: 400px; height: 400px;'></div>
       </div>
-  </div>
   </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
