@@ -1,5 +1,7 @@
-.checkbox-light-green[type="checkbox"].filled-in:checked + span:not(.lever):after 
+body {
+    background-color:#f1f8e9;
+}
+ul.dropdown-content li span
 {
-    border: 2px solid#558b2f ;  
-    background-color:#558b2f ;
+    color:#558b2f ;
 }

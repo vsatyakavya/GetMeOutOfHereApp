@@ -27,6 +27,11 @@ $(document).ready(function () {
     place = $("#pool").attr("id");
    getData(place);
  })
+ $("#campgrounds").on("click", function (event) {
+  event.preventDefault();
+   place = $("#campgrounds").attr("id");
+  getData(place);
+})
 
 
  function getData(place) {
