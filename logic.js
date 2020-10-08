@@ -56,7 +56,35 @@ $(document).ready(function () {
        center: [long, lat],
        zoom: 9
      });
-      
+
+    //  mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z2Q2MnUifQ.EOjRwzS_WYEK5wOfXc32sQ';
+    //  var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+    //  mapboxClient.geocoding
+    //    .forwardGeocode({
+    //      query: 'Wellington, New Zealand',
+    //      autocomplete: false,
+    //      limit: 1
+    //    })
+    //    .send()
+    //    .then(function (response) {
+    //      if (
+    //        response &&
+    //        response.body &&
+    //        response.body.features &&
+    //        response.body.features.length
+    //      ) {
+    //        var feature = response.body.features[0];
+
+    //        var map = new mapboxgl.Map({
+    //          container: 'map',
+    //          style: 'mapbox://styles/mapbox/outdoors-v11',
+    //          center: feature.center,
+    //          zoom: 10
+    //        });
+    //        new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+    //      }
+    //    });
+
 
 
 
@@ -78,16 +106,12 @@ $(document).ready(function () {
          name.attr("place-name", place + i);
          name.attr("longitude", longitude);
          name.attr("latitude", latitude);
-         name.text(placeName);
-         $(".selectedplace").click(function () {
-           $(this).data('clicked', true);
+         name.text(placeName); 
            var marker = new mapboxgl.Marker()
             .setLngLat([longitude, latitude])
             .addTo(map);
            console.log(this)
-
-
-         });
+          
 
          var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
@@ -121,6 +145,8 @@ $(document).ready(function () {
            var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
            card.append(cardBody);
+           var dat = $("<p>");
+           dat.text("Date: "+ formattedDate);
            var temp = $("<p>");
            temp.text("Temperature: " + temperature);
            var humid = $("<p>");
@@ -129,9 +155,7 @@ $(document).ready(function () {
            descr.text("Description:" + description);
            var img =$("<img>");
            img.attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-           var dat = $("<p>");
-           dat.text("Date: "+ formattedDate);
-           cardBody.append(temp , humid, descr, img, dat);
+           cardBody.append(dat, temp , humid, descr, img);
            $("#selected-details").append(card);
 
 
