@@ -50,6 +50,10 @@ $(document).ready(function () {
    function successFunction(position) {
      var lat = position.coords.latitude;
      var long = position.coords.longitude;
+     $(".card-image").css("display","none");
+     $(".card-content").css("display","none");
+     
+
      
 
      mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z2Q2MnUifQ.EOjRwzS_WYEK5wOfXc32sQ';
