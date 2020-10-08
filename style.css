@@ -1,5 +1,27 @@
-.checkbox-light-green[type="checkbox"].filled-in:checked + span:not(.lever):after 
+body {
+    background-image: radial-gradient(#558b2f, orange);
+    background-color:#f1f8e9;
+}
+nav a span,
+nav,
+header {
+    font-family: 'IM Fell Great Primer', serif;
+
+}
+ul.dropdown-content li span
 {
-    border: 2px solid#558b2f ;  
-    background-color:#558b2f ;
+    color:#558b2f ;
+}
+.select-place {
+    color: black
+}
+.card {
+    font-family: 'IM Fell Great Primer SC', serif;
+}
+
+.select-place {
+    font-size: large;
+}
+h2 {
+    text-align: center;
 }
