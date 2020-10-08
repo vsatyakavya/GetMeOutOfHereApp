@@ -151,31 +151,32 @@ $(document).ready(function () {
           });
 
 
+        });
+
+        $(".add-button").on("click", function () {
+          var id = $(this).attr("id");
+          console.log("this is id:" + id);
+          var placeName = ($(this).siblings("p").text());
+          console.log(placeName);
+
+
+
+          localStorage.setItem(id, JSON.stringify(placeName));
+
         })
-        // cardBody.append(button);
-        // $(".add-button").on("click", function () {
-        //    var id=$(this).attr("id");
-        //    console.log("this is id:"+id);
-        //    var placeName=($(this).siblings("p").text());
-        //    console.log(placeName);
+      });
+        function Unix_timestamp(t) {
+          var dt = new Date(t * 1000);
+          var date = dt.getDate();
+          var month = (dt.getMonth() + 1);
+          var year = dt.getFullYear();
+          return month + '/' + date + '/' + year;
+        }
 
 
-
-        //    localStorage.setItem(id,JSON.stringify(placeName) );
-
-      })
-      function Unix_timestamp(t) {
-        var dt = new Date(t * 1000);
-        var date = dt.getDate();
-        var month = (dt.getMonth() + 1);
-        var year = dt.getFullYear();
-        return month + '/' + date + '/' + year;
       }
-
-
     }
-  }
 
 
-});
+  });
 
