@@ -57,6 +57,9 @@ $(document).ready(function () {
        zoom: 9
      });
 
+    
+
+
     //  mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z2Q2MnUifQ.EOjRwzS_WYEK5wOfXc32sQ';
     //  var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
     //  mapboxClient.geocoding
@@ -109,8 +112,12 @@ $(document).ready(function () {
          name.text(placeName); 
            var marker = new mapboxgl.Marker()
             .setLngLat([longitude, latitude])
-            .addTo(map);
+             .addTo(map);
            console.log(this)
+           console.log(marker);
+           
+           
+           
           
 
          var card=$("<div class='card'></div>");
@@ -137,9 +144,17 @@ $(document).ready(function () {
            var date= response.dt;
            var formattedDate=  Unix_timestamp(date);
            var icon = response.weather[0].icon;
-           var marker = new mapboxgl.Marker()
-           .setLngLat([weatherLong, weatherLat])
-           .addTo(map);
+          //  var marker = new mapboxgl.Marker()
+          //  .setLngLat([weatherLong, weatherLat])
+          //  .addTo(map);
+           map.flyTo({
+            center: [
+              weatherLong ,weatherLat
+              
+            ],
+            zoom:15,
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
      //       <div class="card">
      //   <div class="card-content">
      //     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
