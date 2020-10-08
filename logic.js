@@ -2,7 +2,11 @@ $(document).ready(function () {
   $(document).ready(function () {
     $('.dropdown-trigger').dropdown();
   });
-
+  var array=[];
+  var result = localStorage.getItem("saved-locations");
+  if(result){
+    array = JSON.parse(result);
+  }
   var place = "";
   $("#lake").on("click", function (event) {
     event.preventDefault();
@@ -152,16 +156,18 @@ $(document).ready(function () {
 
 
         });
-
+        
         $(".add-button").on("click", function () {
           var id = $(this).attr("id");
           console.log("this is id:" + id);
-          var placeName = ($(this).siblings("p").text());
+          var placeName = ($(this).siblings("p.selectedplace").text());
+          array.push(placeName);
+          localStorage.setItem("saved-locations", JSON.stringify(array));
+
           console.log(placeName);
 
 
 
-          localStorage.setItem(id, JSON.stringify(placeName));
 
         })
       });
