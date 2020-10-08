@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* .form{
     border: teal solid 2px;
     padding:20px;
@@ -10,3 +11,10 @@
 .nav-wrapper{
     background-color:#f58326;
 }
+=======
+.checkbox-light-green[type="checkbox"].filled-in:checked + span:not(.lever):after 
+{
+    border: 2px solid#558b2f ;  
+    background-color:#558b2f ;
+}
+>>>>>>> main
