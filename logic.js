@@ -80,6 +80,7 @@ $(document).ready(function () {
           var button = $("<button>");
           
           button.addClass("add-button");
+          button.attr("id",i);
 
           button.text("save");
 
@@ -140,11 +141,15 @@ $(document).ready(function () {
 
         })
         $(".add-button").on("click", function () {
-          console.log($(this).siblings());
+          var id=$(this).attr("id");
+          console.log("this is id:"+id);
+          var placeName=($(this).siblings("p").text());
+          console.log(placeName);
           
         
           
-          // localStorage.setItem("name",JSON.stringify(placeName1) );
+          localStorage.setItem(id,JSON.stringify(placeName) );
+          
       
         })
 
