@@ -70,20 +70,24 @@ $(document).ready(function () {
        $("#poi-section").empty();
 
        for (var i = 0; i < 5; i++) {
-         var placeName= response.features[i].place_name;
+         var placeName = response.features[i].place_name;
          var longitude = response.features[i].center[0];
-         var latitude =  response.features[i].center[1];
+         var latitude = response.features[i].center[1];
          var name = $("<p>");
          name.addClass("selectedplace");
-         name.attr("place-name", place+i);
+         name.attr("place-name", place + i);
          name.attr("longitude", longitude);
          name.attr("latitude", latitude);
          name.text(placeName);
-          var marker = new mapboxgl.Marker()
+         $(".selectedplace").click(function () {
+           $(this).data('clicked', true);
+           var marker = new mapboxgl.Marker()
             .setLngLat([longitude, latitude])
             .addTo(map);
+           console.log(this)
 
 
+         });
 
          var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
@@ -135,8 +139,7 @@ $(document).ready(function () {
 
           
          });
-
-        }});
+    }});
      function Unix_timestamp(t)
      {
      var dt = new Date(t * 1000);
