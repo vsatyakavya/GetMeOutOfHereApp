@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $(document).ready(function () {
+        $('.dropdown-trigger').dropdown();
+      });
+      
     var place="";
    $("#lake").on("click", function (event) {
      event.preventDefault();
