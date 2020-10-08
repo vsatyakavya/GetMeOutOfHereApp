@@ -89,12 +89,9 @@ $(document).ready(function () {
 
          var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
-           var cardTitle=$("<div class='card-title'>");
-           cardBody.attr("style", "color:white");
-           cardTitle.text("Click Me To See Weather For This Location!").attr("style", "color: white;");
-           card.attr("style", "background-color: #558b2f");
-           
-           card.append( cardTitle, cardBody);
+           cardBody.attr("style", "color:white").text("Click To See Weather For This Location!");
+           card.attr("style", "background-color: #558b2f; cursor: pointer; text-align: center;");
+           card.append(cardBody);
             cardBody.append(name);
            $("#poi-section").append(card);
            
@@ -120,13 +117,10 @@ $(document).ready(function () {
            var formattedDate=  Unix_timestamp(date);
 
            var icon = response.weather[0].icon;
-     //       <div class="card">
-     //   <div class="card-content">
-     //     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-     //   </div>
-     // </div>
            var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
+           card.attr("style", "background-color: #558b2f; cursor: pointer; text-align: center;");
+
            card.append(cardBody);
            var temp = $("<p>");
            temp.text("Temperature: " + temperature);

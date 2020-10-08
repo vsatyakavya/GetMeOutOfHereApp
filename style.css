@@ -1,8 +1,10 @@
 body {
+    background-image: radial-gradient(#558b2f, orange);
     background-color:#f1f8e9;
 }
 nav a span,
-nav {
+nav,
+header {
     font-family: 'IM Fell Great Primer', serif;
 
 }
@@ -13,7 +15,13 @@ ul.dropdown-content li span
 .select-place {
     color: black
 }
+.card {
+    font-family: 'IM Fell Great Primer SC', serif;
+}
 
-#poi-section {
-    background-color:#f1f8e9
+.select-place {
+    font-size: large;
+}
+h2 {
+    text-align: center;
 }
