@@ -4,6 +4,8 @@ $(document).ready(function () {
     });
     
   var place="";
+
+
  $("#lake").on("click", function (event) {
    event.preventDefault();
     place = $("#lake").attr("id");
@@ -54,10 +56,7 @@ $(document).ready(function () {
        center: [long, lat],
        zoom: 9
      });
-
-       var marker = new mapboxgl.Marker()
-           .setLngLat([long, lat])
-           .addTo(map);
+      
 
 
 
@@ -80,6 +79,10 @@ $(document).ready(function () {
          name.attr("longitude", longitude);
          name.attr("latitude", latitude);
          name.text(placeName);
+          var marker = new mapboxgl.Marker()
+            .setLngLat([longitude, latitude])
+            .addTo(map);
+
 
 
          var card=$("<div class='card'></div>");
@@ -88,8 +91,6 @@ $(document).ready(function () {
             cardBody.append(name);
            $("#poi-section").append(card);
          
-         
-       }
 
        $(".selectedplace").on("click", function(event) {
          var weatherLong = $(this).attr("longitude");
@@ -107,7 +108,6 @@ $(document).ready(function () {
            var description =response.weather[0].main;
            var date= response.dt;
            var formattedDate=  Unix_timestamp(date);
-
            var icon = response.weather[0].icon;
      //       <div class="card">
      //   <div class="card-content">
@@ -123,19 +123,20 @@ $(document).ready(function () {
            humid.text("Humidity: " + humidity);
            var descr = $("<p>");
            descr.text("Description:" + description);
+           var img =$("<img>");
+           img.attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
            var dat = $("<p>");
            dat.text("Date: "+ formattedDate);
-           cardBody.append(temp , humid, descr, dat);
+           cardBody.append(temp , humid, descr, img, dat);
            $("#selected-details").append(card);
 
 
          });
 
           
-         })
+         });
 
-       
-     })
+        }});
      function Unix_timestamp(t)
      {
      var dt = new Date(t * 1000);
