@@ -89,9 +89,15 @@ $(document).ready(function () {
 
          var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
-           card.append(cardBody);
+           var cardTitle=$("<div class='card-title'>");
+           cardBody.attr("style", "color:white");
+           cardTitle.text("Click Me To See Weather For This Location!").attr("style", "color: white;");
+           card.attr("style", "background-color: #558b2f");
+           
+           card.append( cardTitle, cardBody);
             cardBody.append(name);
            $("#poi-section").append(card);
+           
          
          
        }

@@ -1,7 +1,19 @@
 body {
     background-color:#f1f8e9;
 }
+nav a span,
+nav {
+    font-family: 'IM Fell Great Primer', serif;
+
+}
 ul.dropdown-content li span
 {
     color:#558b2f ;
+}
+.select-place {
+    color: black
+}
+
+#poi-section {
+    background-color:#f1f8e9
 }

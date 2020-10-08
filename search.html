@@ -6,11 +6,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    
+
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer:ital@1&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
     <title>Welcome || GMOH</title>
 </head>
@@ -19,7 +21,7 @@
     <nav>
         <div class="nav-wrapper light-green darken-3">
             <div class="container black-text">
-                <a href="#" class="black-text brand-logo"><i class="fas fa-hiking fa-lg"> Get Me Outta Here</i></a>
+                <a href="#" class="black-text brand-logo"><i class="fas fa-hiking fa-lg"> <span>Get Me Outta Here!</span></i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="search.html" class="black-text">Home</a></li>
                     <li><a href="results.html" class="black-text">Your Places</a></li>
@@ -36,24 +38,31 @@
                         <img class="activator"
                             src="https://media.npr.org/assets/img/2019/04/08/flying-baby-2_wide-8462dba57e207d7faaa3d6de2c9b7b806ac6c468.jpg"
                             alt="Hiker image" />
-                        <span class="card-title">Choose Your Destination Type</span>
+
                     </div>
+
                     <div class="card-content">
-                        <label class="select-place labelFont">Click to see what's around you!</label><br><br>
+                        <label class="select-place">Choose Your Destination Type!</label><br><br>
                         <a class='dropdown-trigger btn light-green darken-2' href='#' data-target='dropdown1'>Places To
                             Go</a>
                         <ul id='dropdown1' class='dropdown-content'>
-                            <li id="lake"><a href="map.html"<i class="fas fa-water" style="color:#000000;"></i><span> Lake</span></a></li>
-                            <li id="beach"><a href="map.html" <i class="fas fa-umbrella-beach" style="color:#000000;"></i> <span>Beach</span></a></li>
-                            <li id="zoo"><a href="map.html" <i class="fas fa-hippo" style="color:#000000;"></i> <span>Zoo</span></a></li>
-                            <li id="pool"><a href="map.html"<i class="fas fa-swimmer" style="color:#000000;"></i> <span>Pool</span></a></li>
-                            <li id="campgrounds"><a href="map.html"<i class="fas fa-campground" style="color:#000000;"></i><span>Campgrounds</span></a></li>
+                            <li id="lake"><a href="map.html"> <i class="fas fa-water" style="color:#000000"></i><span>
+                                        Lake</span></a></li>
+                            <li id="beach"><a href="map.html"> <i class="fas fa-umbrella-beach"
+                                    style="color:#000000"></i> <span>Beach</span></a></li>
+                            <li id="zoo"><a href="map.html"> <i class="fas fa-hippo" style="color:#000000"></i>
+                                    <span>Zoo</span></a></li>
+                            <li id="pool"><a href="map.html"> <i class="fas fa-swimmer" style="color:#000000"></i>
+                                    <span>Pool</span></a></li>
+                            <li id="campgrounds"><a href="map.html"> <i class="fas fa-campground"
+                                    style="color:#000000"></i><span>Campsites</span></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-        
+
         </div>
+
         <div id='map' style='width: auto; height: 300px;'></div>
         <div id="poi-section"></div>
         <div id="selected-details"></div>
