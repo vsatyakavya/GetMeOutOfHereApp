@@ -89,10 +89,12 @@ $(document).ready(function () {
 
          var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
-           cardBody.attr("style", "color:white").text("Click To See Weather For This Location!");
-           card.attr("style", "background-color: #558b2f; cursor: pointer; text-align: center;");
+           var cardContent = $("<p>");
+           cardContent.attr("style", "color:white").text("Click To See Weather For This Location!");
+           card.attr("style", "background-color: #558b2f; color:white; cursor: pointer; text-align: center;");
            card.append(cardBody);
             cardBody.append(name);
+            cardBody.append(cardContent)
            $("#poi-section").append(card);
            
          
