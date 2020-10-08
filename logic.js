@@ -73,9 +73,12 @@ $(document).ready(function () {
           name.attr("latitude", latitude);
           name.text(placeName);
 
-          if (placeName) {
-            $("#poi-section").append(name);
-          }
+          var card=$("<div class='card'></div>");
+            var cardBody =$("<div class='card-content'>");
+            card.append(cardBody);
+             cardBody.append(name);
+            $("#poi-section").append(card);
+          
           
         }
 
@@ -96,14 +99,22 @@ $(document).ready(function () {
             var formattedDate=  Unix_timestamp(date);
 
             var icon = response.weather[0].icon;
-            
+      //       <div class="card">
+      //   <div class="card-content">
+      //     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      //   </div>
+      // </div>
+            var card=$("<div class='card'></div>");
+            var cardBody =$("<div class='card-content'>");
+            card.append(cardBody);
             var temp = $("<p>");
             temp.text("Temperature: " + temperature);
             var humid = $("<p>");
             humid.text("Humidity: " + humidity);
             var dat = $("<p>");
             dat.text("Date: "+ formattedDate);
-            $("#selected-details").append(temp).append(humid).append(dat);
+            cardBody.append(temp , humid, dat);
+            $("#selected-details").append(card);
 
 
           });
