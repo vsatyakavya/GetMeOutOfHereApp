@@ -121,7 +121,7 @@ $(document).ready(function () {
            var icon = response.weather[0].icon;
            var card=$("<div class='card'></div>");
            var cardBody =$("<div class='card-content'>");
-           card.attr("style", "background-color: #558b2f; cursor: pointer; text-align: center;");
+           card.attr("style", "background-color: #558b2f; color: white; cursor: pointer; text-align: center;");
 
            card.append(cardBody);
            var temp = $("<p>");
