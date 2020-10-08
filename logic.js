@@ -1,15 +1,16 @@
 
 $(document).ready(function () {
-   var place="";
+  var place = "";
   $("#lake").on("click", function (event) {
     event.preventDefault();
-     place = $("#lake").attr("id");
+    place = $("#lake").attr("id");
+
     getData(place);
   })
   $("#beach").on("click", function (event) {
     event.preventDefault();
 
-     place = $("#beach").attr("id");
+    place = $("#beach").attr("id");
     getData(place);
   })
   $("#zoo").on("click", function (event) {
@@ -21,7 +22,7 @@ $(document).ready(function () {
   $("#pool").on("click", function (event) {
     event.preventDefault();
 
-     place = $("#pool").attr("id");
+    place = $("#pool").attr("id");
     getData(place);
   })
 
@@ -42,7 +43,7 @@ $(document).ready(function () {
     function successFunction(position) {
       var lat = position.coords.latitude;
       var long = position.coords.longitude;
-      
+
 
       mapboxgl.accessToken = 'pk.eyJ1IjoiZHJvcC1nIiwiYSI6ImNrZnd3OTd6azFvMWkydG10aGN2Z2Q2MnUifQ.EOjRwzS_WYEK5wOfXc32sQ';
       var map = new mapboxgl.Map({
@@ -61,82 +62,106 @@ $(document).ready(function () {
       }).then(function (response) {
         console.log(response);
         $("#poi-section").empty();
-
+        
         for (var i = 0; i < 5; i++) {
-          var placeName= response.features[i].place_name;
+         var placeName = response.features[i].place_name;
           var longitude = response.features[i].center[0];
-          var latitude =  response.features[i].center[1];
+          var latitude = response.features[i].center[1];
           var name = $("<p>");
           name.addClass("selectedplace");
-          name.attr("place-name", place+i);
+          name.attr("place-name", place + i);
           name.attr("longitude", longitude);
           name.attr("latitude", latitude);
           name.text(placeName);
+          var card = $("<div class='card'></div>");
+          var cardBody = $("<div class='card-content'>");
+          card.append(cardBody);
+          cardBody.append(name);
+          var button = $("<button>");
+          
+          button.addClass("add-button");
 
-          var card=$("<div class='card'></div>");
-            var cardBody =$("<div class='card-content'>");
-            card.append(cardBody);
-             cardBody.append(name);
-            $("#poi-section").append(card);
-          
-          
+          button.text("save");
+
+          cardBody.append(button);
+
+          $("#poi-section").append(card);
+
+
+
+
         }
 
-        $(".selectedplace").on("click", function(event) {
+
+        $(".selectedplace").on("click", function (event) {
           var weatherLong = $(this).attr("longitude");
           var weatherLat = $(this).attr("latitude");
+
+          
           var API = "381913a298d3365457e6e5d4fdf83c2c";
           var queryUrl = "https://api.openweathermap.org/data/2.5/weather" + "?lat=" + weatherLat + "&lon=" + weatherLong + "&appid=" + API + "&units=imperial";
           $.ajax({
-            url:queryUrl,
-            method:"GET"
-          }).then(function(response){
+            url: queryUrl,
+            method: "GET"
+          }).then(function (response) {
+            console.log(response);
 
             $("#selected-details").empty();
-            var humidity= response.main.humidity;
-            var temperature =response.main.temp;
-            var date= response.dt;
-            var formattedDate=  Unix_timestamp(date);
+
+
+            var humidity = response.main.humidity;
+            var temperature = response.main.temp;
+            var date = response.dt;
+            var formattedDate = Unix_timestamp(date);
 
             var icon = response.weather[0].icon;
-      //       <div class="card">
-      //   <div class="card-content">
-      //     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-      //   </div>
-      // </div>
-            var card=$("<div class='card'></div>");
-            var cardBody =$("<div class='card-content'>");
+
+
+            //       <div class="card">
+            //   <div class="card-content">
+            //     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+            //   </div>
+            // </div>
+            var card = $("<div class='card'></div>");
+            var cardBody = $("<div class='card-content'>");
             card.append(cardBody);
             var temp = $("<p>");
             temp.text("Temperature: " + temperature);
             var humid = $("<p>");
             humid.text("Humidity: " + humidity);
             var dat = $("<p>");
-            dat.text("Date: "+ formattedDate);
-            cardBody.append(temp , humid, dat);
+            dat.text("Date: " + formattedDate);
+            cardBody.append(temp, humid, dat);
             $("#selected-details").append(card);
 
 
           });
- 
-           
-          })
 
+
+        })
+        $(".add-button").on("click", function () {
+          console.log($(this).siblings());
+          
         
-      })
-      function Unix_timestamp(t)
-      {
-      var dt = new Date(t * 1000);
-      var date = dt.getDate();
-      var month =  (dt.getMonth() + 1);
-      var year =  dt.getFullYear();
-      return month+ '/' + date+ '/' + year;  
-      }
+          
+          // localStorage.setItem("name",JSON.stringify(placeName1) );
       
+        })
+
+
+      })
+      function Unix_timestamp(t) {
+        var dt = new Date(t * 1000);
+        var date = dt.getDate();
+        var month = (dt.getMonth() + 1);
+        var year = dt.getFullYear();
+        return month + '/' + date + '/' + year;
+      }
+
 
     }
   }
-
+ 
 
 });
 
