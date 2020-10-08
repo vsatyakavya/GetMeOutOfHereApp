@@ -137,9 +137,7 @@ $(document).ready(function () {
            var date= response.dt;
            var formattedDate=  Unix_timestamp(date);
            var icon = response.weather[0].icon;
-           var marker = new mapboxgl.Marker()
-           .setLngLat([weatherLong, weatherLat])
-           .addTo(map);
+          
      //       <div class="card">
      //   <div class="card-content">
      //     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
