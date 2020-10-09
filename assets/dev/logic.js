@@ -139,17 +139,17 @@ $(document).ready(function () {
               });
             var card = $("<div class='card'></div>");
             var cardBody = $("<div class='card-content'>");
-            card.attr("style", "background-color: #558b2f; color: white; cursor: pointer; text-align: center;");
+            card.attr("style", "background-color: #7cb342; color: white; cursor: pointer; text-align: center;");
 
             card.append(cardBody);
             var cityTown = $("<p>");
             cityTown.text("City: " + location);
             var temp = $("<p>");
-            temp.text("Temperature: " + temperature);
+            temp.text("Temperature: " + temperature + "°F");
             var humid = $("<p>");
-            humid.text("Humidity: " + humidity);
+            humid.text("Humidity: " + humidity + "%");
             var descr = $("<p>");
-            descr.text("Description:" + description);
+            descr.text("Description: " + description);
             var dat = $("<p>");
             dat.text("Date: " + formattedDate);
             var img =$("<img>");
