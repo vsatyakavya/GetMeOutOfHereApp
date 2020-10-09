@@ -122,6 +122,7 @@ $(document).ready(function () {
           }).then(function (response) {
 
             $("#selected-details").empty();
+            var location=response.name
             var humidity = response.main.humidity;
             var temperature = response.main.temp;
             var description = response.weather[0].main;
@@ -141,6 +142,8 @@ $(document).ready(function () {
             card.attr("style", "background-color: #558b2f; color: white; cursor: pointer; text-align: center;");
 
             card.append(cardBody);
+            var cityTown = $("<p>");
+            cityTown.text("City: " + location);
             var temp = $("<p>");
             temp.text("Temperature: " + temperature);
             var humid = $("<p>");
@@ -151,7 +154,7 @@ $(document).ready(function () {
             dat.text("Date: " + formattedDate);
             var img =$("<img>");
             img.attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
-            cardBody.append(dat, temp , humid, descr, img);
+            cardBody.append(cityTown, dat, temp , humid, descr, img);
             $("#selected-details").append(card);
 
           });
