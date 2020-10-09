@@ -93,6 +93,11 @@ $(document).ready(function () {
           name.attr("longitude", longitude);
           name.attr("latitude", latitude);
           name.text(placeName);
+          var marker = new mapboxgl.Marker()
+            .setLngLat([longitude, latitude])
+             .addTo(map);
+           console.log(this)
+           console.log(marker);
 
 
           var card = $("<div class='card'></div>");
