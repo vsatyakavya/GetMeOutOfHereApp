@@ -153,7 +153,9 @@ $(document).ready(function () {
             descr.text("Description:" + description);
             var dat = $("<p>");
             dat.text("Date: " + formattedDate);
-            cardBody.append(temp, humid, descr, dat);
+            var img =$("<img>");
+            img.attr("src", "https://openweathermap.org/img/w/" + icon + ".png");
+            cardBody.append(dat, temp , humid, descr, img);
             $("#selected-details").append(card);
 
           });
