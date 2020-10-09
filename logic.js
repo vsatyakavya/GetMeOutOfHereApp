@@ -102,10 +102,8 @@ $(document).ready(function () {
           cardBody.append(name);
           cardBody.append(cardContent)
           var button = $("<button>");
-
           button.addClass("add-button");
           button.attr("id", i);
-
           button.text("save");
           cardBody.append(button);
 
@@ -129,9 +127,7 @@ $(document).ready(function () {
             var description = response.weather[0].main;
             var date = response.dt;
             var formattedDate = Unix_timestamp(date);
-
             var icon = response.weather[0].icon;
-
             map.flyTo({
               center: [
                 weatherLong ,weatherLat
