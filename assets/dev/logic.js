@@ -145,9 +145,9 @@ $(document).ready(function () {
             var cityTown = $("<p>");
             cityTown.text("City: " + location);
             var temp = $("<p>");
-            temp.text("Temperature: " + temperature + "°F");
+            temp.text("Temperature: " + temperature + " °F");
             var humid = $("<p>");
-            humid.text("Humidity: " + humidity + "%");
+            humid.text("Humidity: " + humidity + " %");
             var descr = $("<p>");
             descr.text("Description: " + description);
             var dat = $("<p>");
