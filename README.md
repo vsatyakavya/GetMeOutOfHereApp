@@ -1,9 +1,11 @@
 # GetMeOutOfHereApp
 
 ## User Story
+```
   As an Outdoorsy Person
   I want an app that shows my near places and current weather over there based on my selected type of place
   So that I can get the information exactly what i want
+  ```
 
  ## Technologies used:
 * HTML, CSS, Materialize, API's
@@ -24,9 +26,9 @@
 * Using Map
 
 # Sample web page
-![picture](Assets/dev/gmoh.png)
-![picture](Assets/dev/mapandplaces.png)
-![picture](Assets/dev/weatherDetails.png)
+![picture](assets/dev/gmoh.png)
+![picture](assets/dev/mapandplaces.png)
+![picture](assets/dev/weatherDetails.png)
 
 # Github Page 
 https://vsatyakavya.github.io/MyPortfolio.github.io/
