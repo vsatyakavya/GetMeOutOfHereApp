@@ -146,7 +146,7 @@ $(document).ready(function () {
                 weatherLong ,weatherLat
                 
               ],
-              zoom:15,
+              zoom:14,
               essential: true // this animation is considered essential with respect to prefers-reduced-motion
               });
             var card = $("<div class='card'></div>");
