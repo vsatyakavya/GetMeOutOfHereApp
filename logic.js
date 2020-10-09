@@ -140,6 +140,15 @@ $(document).ready(function () {
             var formattedDate = Unix_timestamp(date);
 
             var icon = response.weather[0].icon;
+
+            map.flyTo({
+              center: [
+                weatherLong ,weatherLat
+                
+              ],
+              zoom:15,
+              essential: true // this animation is considered essential with respect to prefers-reduced-motion
+              });
             var card = $("<div class='card'></div>");
             var cardBody = $("<div class='card-content'>");
             card.attr("style", "background-color: #558b2f; color: white; cursor: pointer; text-align: center;");
