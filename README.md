@@ -38,11 +38,10 @@ https://drop-g.github.io/GetMeOutOfHereApp/
 https://github.com/Drop-G/GetMeOutOfHereApp
 
 # Contact 
-```
-satyakavya24@gmail.com
-elizakennelly@gmail.com
+satyakavya24@gmail.com , 
+elizakennelly@gmail.com, 
 tedpetersiv@gmail.com
-```
+
 
 copyright@2020
 
