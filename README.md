@@ -31,15 +31,16 @@
 ![picture](assets/dev/weatherDetails.png)
 
 # Github Page 
-https://vsatyakavya.github.io/MyPortfolio.github.io/
+https://drop-g.github.io/GetMeOutOfHereApp/
 
 
 # Github Repository
-
-https://github.com/vsatyakavya/MyPortfolio.github.io
+https://github.com/Drop-G/GetMeOutOfHereApp
 
 # Contact 
 satyakavya24@gmail.com
+elizakennelly@gmail.com
+tedpetersiv@gmail.com
 
-copyright 2020
+copyright@2020
 
