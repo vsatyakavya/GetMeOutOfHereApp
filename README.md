@@ -8,7 +8,7 @@
   ```
 
  ## Technologies used:
-* HTML, CSS, Materialize, openweather API , mapbox API
+* HTML, CSS, Materialize, Java script, JQuery, openweather API , mapbox API
 
 ## Features:
 * Interactive website.
