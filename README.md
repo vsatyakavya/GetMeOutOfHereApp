@@ -35,7 +35,7 @@ https://drop-g.github.io/GetMeOutOfHereApp/
 
 
 # Github Repository
-https://github.com/Drop-G/GetMeOutOfHereApp
+https://github.com/vsatyakavya/GetMeOutOfHereApp
 
 # Contact 
 satyakavya24@gmail.com , 
